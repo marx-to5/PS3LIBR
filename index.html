@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <title>PS3LB</title>
 
+<!-- 🚀 Preload الصور -->
+<link rel="preload" as="image" href="2.png">
+<link rel="preload" as="image" href="3.png">
+
 <style>
 html, body {
     margin: 0;
@@ -20,7 +24,6 @@ html, body {
     display: none;
 }
 
-/* الصفحة الرئيسية تظهر أولاً */
 #home {
     display: block;
 }
@@ -43,23 +46,10 @@ html, body {
 }
 
 /* ===== الصفحة الرئيسية ===== */
-
-#btn1 {
-    top: 60%;
-    left: 20%;
-    font-size: 22px;
-    padding: 10px 25px;
-}
-
-#btn2 {
-    top: 70%;
-    left: 20%;
-    font-size: 22px;
-    padding: 10px 25px;
-}
+#btn1 { top: 60%; left: 20%; font-size: 22px; padding: 10px 25px; }
+#btn2 { top: 70%; left: 20%; font-size: 22px; padding: 10px 25px; }
 
 /* ===== الصفحة 2 ===== */
-
 #p2_b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; }
 #p2_b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; }
 #p2_b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; }
@@ -68,15 +58,9 @@ html, body {
 #p2_b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; }
 #p2_b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; }
 
-#p2_back {
-    top: 85%;
-    left: 45%;
-    font-size: 24px;
-    padding: 10px 30px;
-}
+#p2_back { top: 85%; left: 45%; font-size: 24px; padding: 10px 30px; }
 
 /* ===== الصفحة 3 ===== */
-
 #p3_b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; }
 #p3_b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; }
 #p3_b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; }
@@ -85,15 +69,20 @@ html, body {
 #p3_b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; }
 #p3_b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; }
 
-#p3_back {
-    top: 85%;
-    left: 45%;
-    font-size: 24px;
-    padding: 10px 30px;
-}
+#p3_back { top: 85%; left: 45%; font-size: 24px; padding: 10px 30px; }
 </style>
 
 <script>
+// 🚀 تحميل الصور مسبقًا (مهم جدًا للـ PS3)
+function preloadImages() {
+    var img1 = new Image();
+    var img2 = new Image();
+
+    img1.src = "2.png";
+    img2.src = "3.png";
+}
+
+// 🎮 التنقل السريع
 function showPage(page) {
     document.getElementById("home").style.display = "none";
     document.getElementById("page2").style.display = "none";
@@ -101,30 +90,24 @@ function showPage(page) {
 
     document.getElementById(page).style.display = "block";
 }
+
+window.onload = preloadImages;
 </script>
 
 </head>
 
 <body>
 
-<!-- ================= الصفحة الرئيسية ================= -->
+<!-- الصفحة الرئيسية -->
 <div id="home" class="page">
-
     <img src="1.png" class="bg">
 
-    <button id="btn1" class="btn" onclick="showPage('page2')">
-        Page 2
-    </button>
-
-    <button id="btn2" class="btn" onclick="showPage('page3')">
-        Page 3
-    </button>
-
+    <button id="btn1" class="btn" onclick="showPage('page2')">Page 2</button>
+    <button id="btn2" class="btn" onclick="showPage('page3')">Page 3</button>
 </div>
 
-<!-- ================= الصفحة 2 ================= -->
+<!-- الصفحة 2 -->
 <div id="page2" class="page">
-
     <img src="2.png" class="bg">
 
     <button id="p2_b1" class="btn" onclick="window.location='LINK1'">Btn1</button>
@@ -135,15 +118,11 @@ function showPage(page) {
     <button id="p2_b5" class="btn" onclick="window.location='LINK5'">Btn5</button>
     <button id="p2_b6" class="btn" onclick="window.location='LINK6'">Btn6</button>
 
-    <button id="p2_back" class="btn" onclick="showPage('home')">
-        Back
-    </button>
-
+    <button id="p2_back" class="btn" onclick="showPage('home')">Back</button>
 </div>
 
-<!-- ================= الصفحة 3 ================= -->
+<!-- الصفحة 3 -->
 <div id="page3" class="page">
-
     <img src="3.png" class="bg">
 
     <button id="p3_b1" class="btn" onclick="window.location='LINK1'">Btn1</button>
@@ -154,10 +133,7 @@ function showPage(page) {
     <button id="p3_b5" class="btn" onclick="window.location='LINK5'">Btn5</button>
     <button id="p3_b6" class="btn" onclick="window.location='LINK6'">Btn6</button>
 
-    <button id="p3_back" class="btn" onclick="showPage('home')">
-        Back
-    </button>
-
+    <button id="p3_back" class="btn" onclick="showPage('home')">Back</button>
 </div>
 
 </body>
