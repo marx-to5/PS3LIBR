@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Update</title>
 
 <style>
@@ -10,48 +10,135 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
+    font-family: Arial;
 }
 
-/* 🎯 قاعدة الأزرار */
+/* الخلفية */
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* كل “صفحة” */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* الصفحة الأولى ظاهرة */
+#home {
+    display: block;
+}
+
+/* زر عام */
 .btn {
     position: absolute;
     background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid white;
+    color: white;
     cursor: pointer;
+    text-align: center;
 }
 
-/* 🔵 زر 1 */
+/* ====== تحكم يدوي بكل زر ====== */
+
+/* زر 1 */
 #btn1 {
-    top: 62%;
+    top: 30%;
     left: 20%;
-    font-size: 22px;
-    padding: 10px 25px;
-    transform: scale(1);
+    width: 20vw;
+    height: 8vh;
+    font-size: 2.5vh;
 }
 
-/* 🔵 زر 2 */
+/* زر 2 */
 #btn2 {
-    top: 72%;
+    top: 50%;
     left: 20%;
-    font-size: 22px;
-    padding: 10px 25px;
-    transform: scale(1);
+    width: 20vw;
+    height: 8vh;
+    font-size: 2.5vh;
+}
+
+/* زر 3 (قابل للتكبير أكثر) */
+#btn3 {
+    top: 70%;
+    left: 20%;
+    width: 30vw;
+    height: 10vh;
+    font-size: 3vh;
+}
+
+/* داخل الصفحات الثانية */
+.center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>
+
+<script>
+function showPage(id) {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page3").style.display = "none";
+
+    document.getElementById(id).style.display = "block";
+}
+</script>
+
 </head>
 
 <body>
 
-<img src="1.png" width="100%" height="100%" style="position:absolute;z-index:-1;">
+<!-- الخلفية -->
+<img src="1.png" class="bg">
 
-<form action="page2.html">
-<button id="btn1" class="btn">Page 2</button>
-</form>
+<!-- الصفحة الرئيسية -->
+<div id="home" class="page">
 
-<form action="page3.html">
-<button id="btn2" class="btn">Page 3</button>
-</form>
+    <button class="btn" id="btn1" onclick="showPage('page2')">
+        الذهاب إلى الصفحة 2
+    </button>
+
+    <button class="btn" id="btn2" onclick="showPage('page3')">
+        الذهاب إلى الصفحة 3
+    </button>
+
+    <button class="btn" id="btn3" onclick="alert('زر قابل للتعديل')">
+        زر ثالث
+    </button>
+
+</div>
+
+<!-- الصفحة 2 -->
+<div id="page2" class="page">
+
+    <div class="center">
+        <button class="btn" style="position:relative; width:200px; height:60px;"
+                onclick="showPage('home')">
+            رجوع
+        </button>
+    </div>
+
+</div>
+
+<!-- الصفحة 3 -->
+<div id="page3" class="page">
+
+    <div class="center">
+        <button class="btn" style="position:relative; width:200px; height:60px;"
+                onclick="showPage('home')">
+            رجوع
+        </button>
+    </div>
+
+</div>
 
 </body>
 </html>
