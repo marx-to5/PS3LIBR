@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Page 3</title>
+<title>PS3LB</title>
 
 <style>
 html, body {
@@ -12,6 +12,28 @@ html, body {
     overflow: hidden;
 }
 
+/* الصفحات */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* الصفحة الرئيسية تظهر أولاً */
+#home {
+    display: block;
+}
+
+/* الخلفيات */
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* الأزرار */
 .btn {
     position: absolute;
     background: transparent;
@@ -20,42 +42,123 @@ html, body {
     cursor: pointer;
 }
 
-/* 🎮 الأزرار (نظام نسبي + حجم مستقل) */
+/* ===== الصفحة الرئيسية ===== */
 
-#b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; transform: scale(1); }
-#b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; transform: scale(1.1); }
-#b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; transform: scale(1); }
+#btn1 {
+    top: 60%;
+    left: 20%;
+    font-size: 22px;
+    padding: 10px 25px;
+}
 
-#b4 { top: 55%; left: 15%; font-size: 20px; padding: 8px 18px; transform: scale(1); }
-#b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; transform: scale(1.1); }
-#b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; transform: scale(1); }
+#btn2 {
+    top: 70%;
+    left: 20%;
+    font-size: 22px;
+    padding: 10px 25px;
+}
 
-/* 🔙 العودة */
-#back {
+/* ===== الصفحة 2 ===== */
+
+#p2_b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; }
+#p2_b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; }
+#p2_b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; }
+
+#p2_b4 { top: 55%; left: 15%; font-size: 20px; padding: 8px 18px; }
+#p2_b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; }
+#p2_b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; }
+
+#p2_back {
     top: 85%;
     left: 45%;
     font-size: 24px;
     padding: 10px 30px;
-    transform: scale(1);
+}
+
+/* ===== الصفحة 3 ===== */
+
+#p3_b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; }
+#p3_b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; }
+#p3_b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; }
+
+#p3_b4 { top: 55%; left: 15%; font-size: 20px; padding: 8px 18px; }
+#p3_b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; }
+#p3_b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; }
+
+#p3_back {
+    top: 85%;
+    left: 45%;
+    font-size: 24px;
+    padding: 10px 30px;
 }
 </style>
+
+<script>
+function showPage(page) {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page3").style.display = "none";
+
+    document.getElementById(page).style.display = "block";
+}
+</script>
+
 </head>
 
 <body>
 
-<img src="2.png" width="100%" height="100%" style="position:absolute;z-index:-1;">
+<!-- ================= الصفحة الرئيسية ================= -->
+<div id="home" class="page">
 
-<form action="LINK1"><button id="b1" class="btn">Btn1</button></form>
-<form action="LINK2"><button id="b2" class="btn">Btn2</button></form>
-<form action="LINK3"><button id="b3" class="btn">Btn3</button></form>
+    <img src="1.png" class="bg">
 
-<form action="LINK4"><button id="b4" class="btn">Btn4</button></form>
-<form action="LINK5"><button id="b5" class="btn">Btn5</button></form>
-<form action="LINK6"><button id="b6" class="btn">Btn6</button></form>
+    <button id="btn1" class="btn" onclick="showPage('page2')">
+        Page 2
+    </button>
 
-<form action="index.html">
-<button id="back" class="btn">Back</button>
-</form>
+    <button id="btn2" class="btn" onclick="showPage('page3')">
+        Page 3
+    </button>
+
+</div>
+
+<!-- ================= الصفحة 2 ================= -->
+<div id="page2" class="page">
+
+    <img src="2.png" class="bg">
+
+    <button id="p2_b1" class="btn" onclick="window.location='LINK1'">Btn1</button>
+    <button id="p2_b2" class="btn" onclick="window.location='LINK2'">Btn2</button>
+    <button id="p2_b3" class="btn" onclick="window.location='LINK3'">Btn3</button>
+
+    <button id="p2_b4" class="btn" onclick="window.location='LINK4'">Btn4</button>
+    <button id="p2_b5" class="btn" onclick="window.location='LINK5'">Btn5</button>
+    <button id="p2_b6" class="btn" onclick="window.location='LINK6'">Btn6</button>
+
+    <button id="p2_back" class="btn" onclick="showPage('home')">
+        Back
+    </button>
+
+</div>
+
+<!-- ================= الصفحة 3 ================= -->
+<div id="page3" class="page">
+
+    <img src="3.png" class="bg">
+
+    <button id="p3_b1" class="btn" onclick="window.location='LINK1'">Btn1</button>
+    <button id="p3_b2" class="btn" onclick="window.location='LINK2'">Btn2</button>
+    <button id="p3_b3" class="btn" onclick="window.location='LINK3'">Btn3</button>
+
+    <button id="p3_b4" class="btn" onclick="window.location='LINK4'">Btn4</button>
+    <button id="p3_b5" class="btn" onclick="window.location='LINK5'">Btn5</button>
+    <button id="p3_b6" class="btn" onclick="window.location='LINK6'">Btn6</button>
+
+    <button id="p3_back" class="btn" onclick="showPage('home')">
+        Back
+    </button>
+
+</div>
 
 </body>
 </html>
