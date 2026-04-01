@@ -1,8 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Update</title>
+<meta charset="utf-8">
+<title>Page 3</title>
 
 <style>
 html, body {
@@ -10,135 +10,52 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    font-family: Arial;
 }
 
-/* الخلفية */
-.bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-/* كل “صفحة” */
-.page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-
-/* الصفحة الأولى ظاهرة */
-#home {
-    display: block;
-}
-
-/* زر عام */
 .btn {
     position: absolute;
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #fff;
+    color: #fff;
     cursor: pointer;
-    text-align: center;
 }
 
-/* ====== تحكم يدوي بكل زر ====== */
+/* 🎮 الأزرار (نظام نسبي + حجم مستقل) */
 
-/* زر 1 */
-#btn1 {
-    top: 30%;
-    left: 20%;
-    width: 20vw;
-    height: 8vh;
-    font-size: 2.5vh;
-}
+#b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; transform: scale(1); }
+#b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; transform: scale(1.1); }
+#b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; transform: scale(1); }
 
-/* زر 2 */
-#btn2 {
-    top: 50%;
-    left: 20%;
-    width: 20vw;
-    height: 8vh;
-    font-size: 2.5vh;
-}
+#b4 { top: 55%; left: 15%; font-size: 20px; padding: 8px 18px; transform: scale(1); }
+#b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; transform: scale(1.1); }
+#b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; transform: scale(1); }
 
-/* زر 3 (قابل للتكبير أكثر) */
-#btn3 {
-    top: 70%;
-    left: 20%;
-    width: 30vw;
-    height: 10vh;
-    font-size: 3vh;
-}
-
-/* داخل الصفحات الثانية */
-.center {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* 🔙 العودة */
+#back {
+    top: 85%;
+    left: 45%;
+    font-size: 24px;
+    padding: 10px 30px;
+    transform: scale(1);
 }
 </style>
-
-<script>
-function showPage(id) {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("page2").style.display = "none";
-    document.getElementById("page3").style.display = "none";
-
-    document.getElementById(id).style.display = "block";
-}
-</script>
-
 </head>
 
 <body>
 
-<!-- الخلفية -->
-<img src="1.png" class="bg">
+<img src="2.png" width="100%" height="100%" style="position:absolute;z-index:-1;">
 
-<!-- الصفحة الرئيسية -->
-<div id="home" class="page">
+<form action="LINK1"><button id="b1" class="btn">Btn1</button></form>
+<form action="LINK2"><button id="b2" class="btn">Btn2</button></form>
+<form action="LINK3"><button id="b3" class="btn">Btn3</button></form>
 
-    <button class="btn" id="btn1" onclick="showPage('page2')">
-        الذهاب إلى الصفحة 2
-    </button>
+<form action="LINK4"><button id="b4" class="btn">Btn4</button></form>
+<form action="LINK5"><button id="b5" class="btn">Btn5</button></form>
+<form action="LINK6"><button id="b6" class="btn">Btn6</button></form>
 
-    <button class="btn" id="btn2" onclick="showPage('page3')">
-        الذهاب إلى الصفحة 3
-    </button>
-
-    <button class="btn" id="btn3" onclick="alert('زر قابل للتعديل')">
-        زر ثالث
-    </button>
-
-</div>
-
-<!-- الصفحة 2 -->
-<div id="page2" class="page">
-
-    <div class="center">
-        <button class="btn" style="position:relative; width:200px; height:60px;"
-                onclick="showPage('home')">
-            رجوع
-        </button>
-    </div>
-
-</div>
-
-<!-- الصفحة 3 -->
-<div id="page3" class="page">
-
-    <div class="center">
-        <button class="btn" style="position:relative; width:200px; height:60px;"
-                onclick="showPage('home')">
-            رجوع
-        </button>
-    </div>
-
-</div>
+<form action="index.html">
+<button id="back" class="btn">Back</button>
+</form>
 
 </body>
 </html>
