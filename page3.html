@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta charset="utf-8">
+<title>Page 3</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.btn {
+    position: absolute;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 🎮 الأزرار (نظام نسبي + حجم مستقل) */
+
+#b1 { top: 25%; left: 15%; font-size: 20px; padding: 8px 18px; transform: scale(1); }
+#b2 { top: 25%; left: 40%; font-size: 18px; padding: 6px 16px; transform: scale(1.1); }
+#b3 { top: 25%; left: 65%; font-size: 22px; padding: 10px 20px; transform: scale(1); }
+
+#b4 { top: 55%; left: 15%; font-size: 20px; padding: 8px 18px; transform: scale(1); }
+#b5 { top: 55%; left: 40%; font-size: 18px; padding: 6px 16px; transform: scale(1.1); }
+#b6 { top: 55%; left: 65%; font-size: 22px; padding: 10px 20px; transform: scale(1); }
+
+/* 🔙 العودة */
+#back {
+    top: 85%;
+    left: 45%;
+    font-size: 24px;
+    padding: 10px 30px;
+    transform: scale(1);
+}
+</style>
+</head>
+
+<body>
+
+<img src="2.png" width="100%" height="100%" style="position:absolute;z-index:-1;">
+
+<form action="LINK1"><button id="b1" class="btn">Btn1</button></form>
+<form action="LINK2"><button id="b2" class="btn">Btn2</button></form>
+<form action="LINK3"><button id="b3" class="btn">Btn3</button></form>
+
+<form action="LINK4"><button id="b4" class="btn">Btn4</button></form>
+<form action="LINK5"><button id="b5" class="btn">Btn5</button></form>
+<form action="LINK6"><button id="b6" class="btn">Btn6</button></form>
+
+<form action="index.html">
+<button id="back" class="btn">Back</button>
+</form>
+
+</body>
+</html>
